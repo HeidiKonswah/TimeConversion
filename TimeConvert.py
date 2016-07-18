@@ -8,6 +8,9 @@ while True :
         if (not i.isdigit()) and (not i == ':'):
             n_time.append(i)
     t = ''.join(n_time)
+    while int(time[0:2]) > 12:
+        print "Something is wrong with your input. Try again."
+        time = raw_input('Type the time in the format"hh:mm:ss(AM/PM)":\n').strip()
     if t == 'PM':
         if int(time[0:2]) == 12:
             c = int(time[0:2])
@@ -19,4 +22,4 @@ while True :
         else:
             c = int(time[0:2])
         
-    print str(c)+ time[2:8]
+    print str(c)+ time[2:-2]
